@@ -33,14 +33,14 @@ class Conjunto:
             self.agregar_elemento(elemento)
 
     def __add__(self, otro_conjunto: 'Conjunto') -> 'Conjunto':
-        resultado = Conjunto(f"{self.nombre} Unido {otro_conjunto.nombre}")
+        resultado = Conjunto(f"{self.nombre} UNIDO {otro_conjunto.nombre}")
         resultado.elementos = self.elementos.copy()
         resultado.unir(otro_conjunto)
         return resultado
 
     @classmethod
     def intersectar(cls, conjunto1: 'Conjunto', conjunto2: 'Conjunto') -> 'Conjunto':
-        nombre_resultado = f"{conjunto1.nombre} Intersectado {conjunto2.nombre}"
+        nombre_resultado = f"{conjunto1.nombre} INTERSECTADO {conjunto2.nombre}"
         elementos_interseccion = [elemento for elemento in conjunto1.elementos if conjunto2.contiene(elemento)]
         resultado = Conjunto(nombre_resultado)
         resultado.elementos = elementos_interseccion
